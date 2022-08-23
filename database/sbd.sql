@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2022 at 05:15 AM
+-- Generation Time: Aug 23, 2022 at 07:00 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -24,42 +24,95 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `aktifitas`
+--
+
+CREATE TABLE `aktifitas` (
+  `ID_aktifitas` int(11) NOT NULL,
+  `ID_nasabah` int(11) NOT NULL,
+  `tipe` varchar(50) NOT NULL,
+  `waktu` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `nasabah`
 --
 
 CREATE TABLE `nasabah` (
-  `ID` int(11) NOT NULL,
+  `ID_nasabah` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `status_sewa` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nasabah`
 --
 
-INSERT INTO `nasabah` (`ID`, `username`, `password`) VALUES
-(1, 'test', '123'),
-(2, 'fikri', '123');
+INSERT INTO `nasabah` (`ID_nasabah`, `username`, `password`, `status_sewa`) VALUES
+(1, 'test', '123', NULL),
+(2, 'fikri', '123', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penyewaan`
+--
+
+CREATE TABLE `penyewaan` (
+  `ID_penyewaan` int(11) NOT NULL,
+  `ID_nasabah` int(11) NOT NULL,
+  `tipe` varchar(50) NOT NULL,
+  `waktu_sewa` int(11) NOT NULL,
+  `biaya_sewa` int(11) NOT NULL,
+  `status_bayar` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `aktifitas`
+--
+ALTER TABLE `aktifitas`
+  ADD PRIMARY KEY (`ID_aktifitas`);
+
+--
 -- Indexes for table `nasabah`
 --
 ALTER TABLE `nasabah`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID_nasabah`);
+
+--
+-- Indexes for table `penyewaan`
+--
+ALTER TABLE `penyewaan`
+  ADD PRIMARY KEY (`ID_penyewaan`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `aktifitas`
+--
+ALTER TABLE `aktifitas`
+  MODIFY `ID_aktifitas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `nasabah`
 --
 ALTER TABLE `nasabah`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_nasabah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `penyewaan`
+--
+ALTER TABLE `penyewaan`
+  MODIFY `ID_penyewaan` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
