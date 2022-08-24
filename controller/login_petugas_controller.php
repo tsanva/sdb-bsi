@@ -15,10 +15,9 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    require 'db_connection.php';
+    require '../model/login_petugas_model.php';
 
-    $query = mysqli_query($conn, "SELECT * FROM petugas WHERE password='$password' AND username='$username'");
-    $row = mysqli_num_rows($query);
+    $row = query();
 
     if ($row == 1) {
       $_SESSION["petugas"] = true;
@@ -28,6 +27,6 @@ if (isset($_POST['submit'])) {
     } else {
       $error = "username atau password anda salah";
     }
-    mysqli_close($conn);
+    closeConn($conn);
   }
 }
