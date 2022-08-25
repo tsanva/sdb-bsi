@@ -9,7 +9,3 @@ function query() {
   
   return $row;
 }
-
-function closeConn($conn) {
-  mysqli_close($conn);
-}
