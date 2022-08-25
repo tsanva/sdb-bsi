@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2022 at 12:52 PM
+-- Generation Time: Aug 26, 2022 at 12:28 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -72,6 +72,15 @@ CREATE TABLE `penyewaan` (
   `status_bayar` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `penyewaan`
+--
+
+INSERT INTO `penyewaan` (`ID_penyewaan`, `username`, `tipe`, `waktu_sewa`, `biaya_sewa`, `fotokopi`, `td_perjanjian`, `status_bayar`) VALUES
+(1, 'fikri', 'medium', 2, 2300000, 'IMG_20220729_170237.jpg', 'IMG_20220729_170237.jpg', NULL),
+(2, 'test', 'small', 4, 2700000, 'IMG_20220729_170237.jpg', 'IMG_20220729_170237.jpg', NULL),
+(3, 'fikri', 'large', 1, 2300000, 'IMG_20220729_170237.jpg', 'IMG_20220729_170237.jpg', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -128,7 +137,7 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `aktifitas`
 --
 ALTER TABLE `aktifitas`
-  MODIFY `ID_aktifitas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_aktifitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nasabah`
@@ -140,7 +149,7 @@ ALTER TABLE `nasabah`
 -- AUTO_INCREMENT for table `penyewaan`
 --
 ALTER TABLE `penyewaan`
-  MODIFY `ID_penyewaan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_penyewaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `petugas`
