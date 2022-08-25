@@ -1,0 +1,27 @@
+.submit-form{
+    cursor: pointer;
+	width: 100%;
+	height: 40px;
+	margin-top: 25px;
+	border-radius: 3px;
+	font-size: 15px;
+	color: #fff;
+	background-color: #1abc9c;
+	border: none;
+}
+
+.table-full{
+    /*border: 1px solid black;*/
+        width: 100%;
+        padding: 1%;
+        text-align: left;
+}
+
+.input-num{
+    width: 90%;
+	padding: 10px 15px;
+	font-size: 15px;
+	border: 1px solid rgba(46, 91, 255, 0.08);
+	background-color: rgba(224, 231, 255, .2);
+	border-radius: 5px;
+}
