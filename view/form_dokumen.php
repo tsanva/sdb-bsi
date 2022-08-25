@@ -1,3 +1,8 @@
+<?php
+  require '../controller/form_controller.php';
+  echo $bayar;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

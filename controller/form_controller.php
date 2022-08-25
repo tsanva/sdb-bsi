@@ -1,16 +1,18 @@
 <?php
-if(isset($_POST['next'])){
+function hitung(){
+	//require '../controller/session_check_nasabah.php';
 
-	$tipe = $_POST['tipe'];
-	$waktu = $_POST['jangka'];
-	
-	header("location:../view/form_dokumen.php");	
-}
-
-if(isset($_POST['submit'])){
-	$fotokopi = $_POST['fotokopi'];
-	$perjanjian = $_POST['perjanjian'];
-
-	header("location:../view/form_harga.php");
+	$x = 0;
+	$jamin = 1500000;
+    $tipe = $_POST['tipe'];
+    $waktu = $_POST['jangka'];
+    if($tipe == "large"){
+        $x = $x + 800000;
+    }else if($tipe == "medium"){
+         $x = $x + 400000;
+    }else{
+        $x = $x + 300000;
+                      }
+    echo $bayar = $x * $waktu + $jamin;
 }
 ?>

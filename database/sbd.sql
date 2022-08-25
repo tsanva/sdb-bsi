@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2022 at 01:34 AM
+-- Generation Time: Aug 25, 2022 at 12:52 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `aktifitas` (
   `ID_aktifitas` int(11) NOT NULL,
-  `ID_nasabah` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `tipe` varchar(50) NOT NULL,
   `waktu` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -63,10 +63,12 @@ INSERT INTO `nasabah` (`ID_nasabah`, `username`, `password`, `status_sewa`) VALU
 
 CREATE TABLE `penyewaan` (
   `ID_penyewaan` int(11) NOT NULL,
-  `ID_nasabah` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `tipe` varchar(50) NOT NULL,
   `waktu_sewa` int(11) NOT NULL,
   `biaya_sewa` int(11) NOT NULL,
+  `fotokopi` varchar(255) NOT NULL,
+  `td_perjanjian` varchar(255) NOT NULL,
   `status_bayar` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -103,7 +105,8 @@ ALTER TABLE `aktifitas`
 -- Indexes for table `nasabah`
 --
 ALTER TABLE `nasabah`
-  ADD PRIMARY KEY (`ID_nasabah`);
+  ADD PRIMARY KEY (`ID_nasabah`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `penyewaan`
