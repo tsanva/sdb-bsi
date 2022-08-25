@@ -1,4 +1,6 @@
-
+<?php
+require '../controller/login_petugas_controller.php';
+?>
 <!DOCTYPE html>
 <html>
 

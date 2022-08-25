@@ -1,9 +1,8 @@
-// WIP
 <?php
 session_start();
 
 if (isset($_SESSION["petugas"])) {
-  header("Location: dashboard_petugas.php");
+  header("Location: ../view/data_sewa.php");
   exit;
 }
 
@@ -23,7 +22,7 @@ if (isset($_POST['submit'])) {
       $_SESSION["petugas"] = true;
       $_SESSION["username"] = $username;
 
-      header("location: dashboard_petugas.php"); 
+      header("Location: ../view/data_sewa.php");
     } else {
       $error = "username atau password anda salah";
     }

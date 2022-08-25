@@ -3,7 +3,7 @@
 function query()
 {
   require '../controller/session_check_petugas.php';
-  require '../model/konfirmasi_bayar_model.php';
+  require '../model/list_penyewa_model.php';
 
   if (isset($_GET['username'])) {
     $username = $_GET['username'];
@@ -16,7 +16,7 @@ function query()
 function table()
 {
   require '../controller/session_check_petugas.php';
-  require '../model/konfirmasi_bayar_model.php';
+  require '../model/list_penyewa_model.php';
 
   // cek anchor path
   $i = 1;
@@ -25,18 +25,13 @@ function table()
   foreach ($penyewaan as $row) :
     $row['ID_penyewaan'] = $rowIdPenyewaan;
     $row['username'] = $rowUsername;
-    $row['tipe'] = $rowTipe;
-    $row['waktu_sewa'] = $rowWaktuSewa;
-    $row['biaya_sewa'] = $rowBiayaSewa;
     echo "<tr>
       <td>" . $i . "</td>
       <td>" . $rowIdPenyewaan . "</td>
       <td>" . $rowUsername . "</td>
-      <td>" . $rowTipe . "</td>
-      <td>" . $rowWaktuSewa . "</td>
-      <td>" . $rowBiayaSewa . "</td>
       <td>
-      <button class=\"submit-btn1\"><a href=\"../view/konfirmasi_bayar.php?idPenyewaan=" . $rowIdPenyewaan . "\">Konfirmasi</a></button>
+      <button class=\"submit-btn1\"><a href=\"../view/list_penyewa.php?idPenyewaan=" . $rowIdPenyewaan . "&aksi=masuk\">Masuk</a></button>
+      <button class=\"submit-btn1\"><a href=\"../view/list_penyewa.php?idPenyewaan=" . $rowIdPenyewaan . "&aksi=keluar\">Keluar</a></button>
       </td>
       </tr>";
     $i++;
@@ -47,14 +42,17 @@ function table()
 function confirm()
 {
   if (isset($_GET['idPenyewaan'])) {
-    require '../controller/session_check_petugas.php';
-    require '../model/konfirmasi_bayar_model.php';
+    if (isset($_GET['aksi'])) {
+      require '../controller/session_check_petugas.php';
+      require '../model/list_penyewa_model.php';
 
-    $username = $_SESSION['username'];
-    $idPenyewaan = $_GET['idPenyewaan'];
+      $username = $_SESSION['username'];
+      $aksi = $_GET['aksi'];
+      $idPenyewaan = $_GET['idPenyewaan'];
 
-    getAllPenyewaan();
-    updatePenyewaan();
-    header("location:../view/konfirmasi_bayar.php");
+      getAllPenyewaan();
+      setAktivitas();
+      header("location:../view/list_penyewa.php");
+    }
   }
 }

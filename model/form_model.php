@@ -1,8 +1,8 @@
 <?php
-require '../model/db_connection.php';
-function simpanData($sql){
+function simpanData($sql)
+{
+    require '../model/db_connection.php';
+
+    openConn();
     mysqli_query($conn,$sql);
 }
-
-
-?>

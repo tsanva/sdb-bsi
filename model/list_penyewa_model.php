@@ -17,11 +17,11 @@ function getAllPenyewaan()
   $penyewaan = queryTable("SELECT * FROM penyewaan WHERE status_bayar IS NULL");
 }
 
-function updatePenyewaan()
+function setAktivitas()
 {
   require '../controller/session_check_petugas.php';
   require '../model/db_connection.php';
 
-  mysqli_query($conn, "UPDATE penyewaan SET status_bayar = true WHERE ID_penyewaan = $idPenyewaan");
-  mysqli_query($conn, "UPDATE nasabah SET status_sewa = true WHERE username = $username");
+  openConn();
+  mysqli_query($conn, "INSERT INTO aktifitas SET username = $username, tipe = $aksi");
 }

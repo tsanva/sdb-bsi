@@ -1,6 +1,6 @@
 <?php
-session_start();
-function hitung(){
+function hitung()
+{
 	require '../controller/session_check_nasabah.php';
 
 	$x = 0;
@@ -18,7 +18,9 @@ function hitung(){
     echo $bayar = $x * $waktu + $jamin;
 }
 
-function hitungNext(){
+function hitungNext()
+{
+	require '../controller/session_check_nasabah.php';
     $x = 0;
 	$jamin = 1500000;
     $tipe = $_POST['tipe'];
@@ -42,7 +44,8 @@ function hitungNext(){
 }
 
 //menyimpan data ke database
-function simpan(){
+function simpan()
+{
     require '../controller/session_check_nasabah.php';
     require '../model/form_model.php';
 
@@ -70,4 +73,3 @@ function simpan(){
 
     header("location: ../view/form_harga.php");
 }
-?>
