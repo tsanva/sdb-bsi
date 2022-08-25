@@ -44,20 +44,22 @@
             <div class="login-field">
               <h5 class="form-input-label">harga penyewaan(dalam rupiah)</h5>
                 <?php
-                  if (isset($_POST['cek'] )){
-                      $x = 0;
-                      $tipe = $_POST['tipe'];
-                      $waktu = $_POST['jangka'];
-                      if($tipe == "large"){
-                          $x = $x + 800000;
-                      }else if($tipe == "medium"){
-                          $x = $x + 400000;
-                      }else{
-                          $x = $x + 300000;
-                      }
-                      echo $bayar = $x * $waktu;
+                  if (isset($_POST['cek'])) {
+                    hitung();
+                  }
+                  if(isset($_POST['next'])){
+                    header("location:form_dokumen.php");
                   }
                 ?>  
+            </div>
+            <div class="login-field">
+                <h5>Upload fotokopi identitas</h5>
+                <input type="file" id="fotokopi" name="fotokopi" required>
+            </div>
+            <div class="login-field">
+                <h5>Upload Bukti Perjanjian sewa menyewa</h5>
+                <input type="file" id="perjanjian" name="perjanjian" required>
+                <button class=submit-btn value=form-sewa type=submit name= submit>submit</button>
             </div>
           </form>
         </div>

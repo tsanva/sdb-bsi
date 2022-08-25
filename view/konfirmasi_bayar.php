@@ -50,21 +50,22 @@ query();
       </div>
       <div class="tengah">
         <table class="table-field" style="text-align: center;" border="1">
-          <form style="text-align: center;" action="data_kendaraan.php" method="get">
-            <input style="background-color: rgba(224, 231, 255, .2); width: 20%; padding: 5.5px 15px; font-size: 15px; border: 1px solid rgba(46, 91, 255, 0.08);border-radius: 5px; " type="text" name="nopol" placeholder="Cari nopol">
+          <form style="text-align: center;" action="konfirmasi_bayar_controller.php" method="get">
+            <input style="background-color: rgba(224, 231, 255, .2); width: 20%; padding: 5.5px 15px; font-size: 15px; border: 1px solid rgba(46, 91, 255, 0.08);border-radius: 5px; " type="text" name="username" placeholder="Cari nasabah">
 
             <input type="submit" class="submit-btn" value="Cari">
           </form>
           <tr>
             <th>No</th>
-            <th>NIM</th>
-            <th>Nomor Polisi</th>
-            <th>Area Parkir</th>
-            <th>ID Riwayat</th>
+            <th>ID</th>
+            <th>Nama Nasabah</th>
+            <th>Tipe Loker</th>
+            <th>Waktu Sewa</th>
+            <th>Biaya Sewa</th>
             <th>Aksi</th>
           </tr>
 <!-- funct below here -->
-<?php table()  ?>
+          <?php table()  ?>
         </table>
 
       </div>
