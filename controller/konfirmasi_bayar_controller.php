@@ -51,7 +51,7 @@ function confirm()
     require '../controller/session_check_petugas.php';
     require '../model/konfirmasi_bayar_model.php';
 
-    $username = $_SESSION['username']; 
+    $username = $_SESSION['username'];
     $idPenyewaan = $_GET['idPenyewaan'];
 
     getAllPenyewaan();
