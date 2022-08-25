@@ -1,6 +1,5 @@
 <?php
   require '../controller/form_controller.php';
-  echo $bayar;
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +28,11 @@
                 <h5>Upload Bukti Perjanjian sewa menyewa</h5>
                 <input type="file" id="perjanjian" name="perjanjian" required>
                 <button class=submit-btn value=form-sewa type=submit name= submit>submit</button>
+                <?php 
+                if(isset($_POST['submit'])){
+                  simpan();
+                }
+                ?>
             </div>
           </form>
         </div>

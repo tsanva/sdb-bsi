@@ -12,41 +12,39 @@ query();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Konfirmasi Bayar</title>
-  <link rel="stylesheet" type="text/css" href="../css/data_kendaraan1.css">
+  <link rel="stylesheet" type="text/css" href="../css/konfirmasi_bayar.css">
 </head>
 
 <body>
   <div class="utama">
-
-    <div class="sidebar-kiri">
-      <div class="menu">
-        <div style="padding: 2px; background-color: #1abc9c; ">
-          <center><img src="../logo/logokecil.svg"></center>
-        </div>
-        <ul>
-          <li><a href="dashboard_petugas.php">Dashboard</a>
-          <li>
-            <p>Log Parkir</p>
-            <ul>
-              <li><a href="data_kendaraan.php">Data Kendaraan Parkir</a></li>
-              <li><a href="kalkulasi_kendaraan.php">Kalkulasi Kendaraan</a></li>
-            </ul>
-          <li>
-            <p>Laporan</p>
-          </li>
-          <ul>
-            <li><a href="isi_laporan.php">Isi laporan</a></li>
-            <li><a href="isi_kehilangan.php">Isi kehilangan</a></li>
-          </ul>
-          </li>
-          <li><a href="logoutpetugas.php">Keluar</a></li>
-        </ul>
-      </div>
-    </div>
-
+  <div class="sidebar-kiri">
+			<div class="menu">
+				<div style="padding: 2px; background-color: #1abc9c; ">
+				<center><img src="../logo/fe904b026d.png"></center></div>
+				<ul>
+					<!-- <li><a href="#">Dashboard Petugas SDB</a> -->
+					<li>
+						<p>Log Nasabah</p>
+						<ul>
+							<li><a href="#">Data Penyewa SDB</a></li>
+							<li><a href="konfirmasi_bayar.php">Konfirmasi Pembayaran</a></li>
+							<li><a href="data_sewa.php">List Penyewaan SDB</a></li>
+						</ul>
+					<li>
+						<!-- <p>Laporan</p>
+					</li>
+					<ul>
+						<li><a href="isi_laporan.php">Isi laporan</a></li>
+						<li><a href="isi_kehilangan.php">Isi kehilangan</a></li>
+					</ul>
+					</li> -->
+					<li><a href="logoutpetugas.php">Keluar</a></li>
+				</ul>
+			</div>
+		</div>
     <div class="sidebar-kanan">
       <div class="atas">
-        <p> | Log parkir > Data Kendaraan Parkir </p>
+        <p> | Konfirmasi Pembayaran</p>
       </div>
       <div class="tengah">
         <table class="table-field" style="text-align: center;" border="1">
