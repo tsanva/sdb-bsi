@@ -25,7 +25,7 @@ require '../controller/login_nasabah_controller.php';
 				<div class="login-field">
 					<h5 class="form-input-label">
 						Username</h5>
-					<input class="form-input" type="text" id="nim" name="nim" placeholder="Masukkan Nama Pengguna" required></input>
+					<input class="form-input" type="text" id="nim" name="username" placeholder="Masukkan Nama Pengguna" required></input>
 				</div>
 
 				<div class="login-field">
@@ -37,7 +37,7 @@ require '../controller/login_nasabah_controller.php';
 				<div class="login-field">
 					<button class="submit-btn" value="login" type="submit" name="submit">Login</button>
 
-					<p class="form-info-text">Login sebagai <a href="login_petugas.php">Petugas</a></p>
+					<p class="form-info-text">Login sebagai <a href="petugas_login.php">Petugas</a></p>
 					<span><?php echo $error; ?></span>
 
 					<!-- <p class="form-info-text">Jika bermasalah, silahkan email <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCGDBdjsSDRZlpLzvLDsvgGPJhRxmcsXbNJSFkwgrQFpKFjFjFRlgVlMbKknJKJjDXfWZg">tidy.id</a> </p> -->

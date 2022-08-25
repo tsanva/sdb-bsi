@@ -4,5 +4,5 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-header("Location: admin_login.php");
+header("Location: ../view/petugas_login.php");
 exit;

@@ -1,4 +1,3 @@
-// WIP
 <?php
 
 function query() {

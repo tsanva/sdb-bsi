@@ -23,7 +23,7 @@ require '../controller/login_petugas_controller.php';
 				<div class="login-field">
 					<h5 class="form-input-label">
 						Username</h5>
-					<input class="form-input" type="text" id="nip" name="nip" placeholder="Masukkan NIP" required></input>
+					<input class="form-input" type="text" id="nip" name="username" placeholder="Masukkan username" required></input>
 				</div>
 
 				<div class="login-field">
@@ -34,7 +34,7 @@ require '../controller/login_petugas_controller.php';
 
 				<div class="login-field">
 					<button class="submit-btn" value="login" type="submit" name="submit">Login</button>
-					<!-- <p class="form-info-text">Login sebagai <a href="login_mahasiswa.php">Mahasiswa</a></p> -->
+					<p class="form-info-text">Login sebagai <a href="user_login.php">Nasabah</a></p>
 
 					<span><?php echo $error; ?></span>
 				</div>
