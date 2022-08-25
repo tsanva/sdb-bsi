@@ -22,7 +22,7 @@
 						<p>Log Nasabah</p>
 						<ul>
 							<li><a href="#">Data Penyewa SDB</a></li>
-							<li><a href="konfirmasi_bayar.php">Konfirmasi Penyewaan</a></li>
+							<li><a href="konfirmasi_bayar.php">Konfirmasi Pembayaran</a></li>
 							<li><a href="data_sewa.php">List Penyewaan SDB</a></li>
 						</ul>
 					<li>

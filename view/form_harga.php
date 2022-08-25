@@ -22,6 +22,7 @@
             <div class="login-field">
               <h5 class="form-input-label">tipe loker</h5>
               <select class="form-input" name="tipe" id="tipe" required>
+              <option value="" disabled selected>pilih tipe</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
@@ -29,7 +30,7 @@
             </div>
             <div class="login-field">
               <h5 class="form-input-label">Jangka Penyewaan(tahun)</h5>
-              <input class="input-num" type="number" id= "jangka" name="jangka" min=0 max=10 required>
+              <input class="input-num" type="number" id= "jangka" name="jangka" min=0 max=10 required placeholder="masukkan jangka waktu penyewaan">
               <table class=table-full>
                 <tr>
                   <td>
@@ -48,18 +49,9 @@
                     hitung();
                   }
                   if(isset($_POST['next'])){
-                    header("location:form_dokumen.php");
+                    hitungNext();
                   }
                 ?>  
-            </div>
-            <div class="login-field">
-                <h5>Upload fotokopi identitas</h5>
-                <input type="file" id="fotokopi" name="fotokopi" required>
-            </div>
-            <div class="login-field">
-                <h5>Upload Bukti Perjanjian sewa menyewa</h5>
-                <input type="file" id="perjanjian" name="perjanjian" required>
-                <button class=submit-btn value=form-sewa type=submit name= submit>submit</button>
             </div>
           </form>
         </div>
