@@ -1,9 +1,8 @@
-// WIP
 <?php
 session_start();
 
 if (isset($_SESSION["nasabah"])) {
-  header("Location: form.php");
+  header("Location: ../view/form_harga.php");
   exit;
 }
 
@@ -23,7 +22,7 @@ if (isset($_POST['submit'])) {
       $_SESSION["nasabah"] = true;
       $_SESSION["username"] = $username;
 
-      header("location: form.php"); 
+      header("Location: ../view/form_harga.php");
     } else {
       $error = "username atau password anda salah";
     }

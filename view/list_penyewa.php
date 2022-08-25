@@ -1,3 +1,9 @@
+<?php
+require '../controller/list_penyewa_controller.php';
+
+confirm();
+query();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +21,8 @@
 		<div class="sidebar-kiri">
 			<div class="menu">
 				<div style="padding: 2px; background-color: #1abc9c; ">
-				<center><img src="../logo/fe904b026d.png"></center></div>
+					<center><img src="../logo/fe904b026d.png"></center>
+				</div>
 				<ul>
 					<!-- <li><a href="#">Dashboard Petugas SDB</a> -->
 					<li>
@@ -33,7 +40,7 @@
 						<li><a href="isi_kehilangan.php">Isi kehilangan</a></li>
 					</ul>
 					</li> -->
-					<li><a href="logoutpetugas.php">Keluar</a></li>
+					<li><a href="../controller/logout_petugas.php">Keluar</a></li>
 				</ul>
 			</div>
 		</div>
@@ -44,37 +51,15 @@
 			</div>
 
 			<div class="tengah">
-				 <table style="text-align: center;" border="1">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Nasabah</th>
-                            <th>Aksi</th>
-                        </tr>
-
-                        <?php $i = 1; ?>
-                        <!-- mengambil setiap nilai array -->
-                        <?php foreach ($tidy_id as $row) : ?>
-                            <tr>
-                                <!-- membuat nomor auto incremen -->
-                                <td><?php echo $i;  ?></td>
-
-                                <td><?php echo $row['waktu']; ?></td>
-                                <td><?php echo $row['barang']; ?></td>
-                                <td><?php echo $row['lokasi_pengambilan']; ?></td>
-                                <td><?php echo $row['keterangan']; ?></td>
-                                <td><?php echo $row['nip_petugas']; ?></td>
-                                <td><?php echo $row['id_kehilangan']; ?></td>
-                                <td>
-                                    <button class="submit-btn1"><a href="hapus_kehilangan.php?idkehilangan=<?php echo $row['id_kehilangan']; ?>">Masuk</a>
-                                    </button>
-									<button class="submit-btn1"><a href="hapus_kehilangan.php?idkehilangan=<?php echo $row['id_kehilangan']; ?>">Keluar</a>
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php $i++; ?>
-                        <?php endforeach;  ?>
-        
-                     </table>				
+				<table style="text-align: center;" border="1">
+					<tr>
+						<th>No</th>
+						<th>ID</th>
+						<th>Nama Nasabah</th>
+						<th>Aksi</th>
+					</tr>
+					<?php table(); ?>
+				</table>
 			</div>
 		</div>
 </body>

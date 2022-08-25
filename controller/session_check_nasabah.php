@@ -1,6 +1,6 @@
 <?php
 session_start();
 if (!isset($_SESSION["nasabah"])) {
-	header("Location:form.php");
+	header("Location:../view/form_harga.php");
 	exit;
 }
