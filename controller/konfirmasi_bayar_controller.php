@@ -19,7 +19,10 @@ function table()
   require '../controller/session_check_petugas.php';
   require '../model/konfirmasi_bayar_model.php';
 
+  // cek anchor path
   $i = 1;
+
+  getAllPenyewaan();
   foreach ($penyewaan as $row) :
     $row['ID_penyewaan'] = $rowIdPenyewaan;
     $row['username'] = $rowUsername;
@@ -34,10 +37,26 @@ function table()
       <td>" . $rowWaktuSewa . "</td>
       <td>" . $rowBiayaSewa . "</td>
       <td>
-      <button class=\"submit-btn1\"><a href=\"checkout.php?idriwayat=" . $rowIdPenyewaan . "\">Check Out</a></button>
+      <button class=\"submit-btn1\"><a href=\"../view/konfirmasi_bayar.php?idPenyewaan=" . $rowIdPenyewaan . "\">Konfirmasi</a></button>
       </td>
       </tr>";
     $i++;
   endforeach;
   closeConn($conn);
+}
+
+function confirm()
+{
+  if (isset($_GET['idPenyewaan'])) {
+    require '../controller/session_check_petugas.php';
+    require '../model/konfirmasi_bayar_model.php';
+
+    $username = $_SESSION['username']; 
+    $idPenyewaan = $_GET['idPenyewaan'];
+
+    getAllPenyewaan();
+    mysqli_query($conn, "UPDATE penyewaan SET status_bayar = true WHERE ID_penyewaan = $idPenyewaan");
+    mysqli_query($conn, "UPDATE nasabah SET status_sewa = true WHERE username = $username");
+    header("location:konfirmasi_bayar.php");
+  }
 }
