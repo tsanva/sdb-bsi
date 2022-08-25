@@ -64,7 +64,7 @@ query();
             <th>Aksi</th>
           </tr>
 <!-- funct below here -->
-
+<?php table()  ?>
         </table>
 
       </div>
