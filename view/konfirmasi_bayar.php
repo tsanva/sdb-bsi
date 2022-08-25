@@ -1,6 +1,7 @@
 <?php
 require '../controller/konfirmasi_bayar_controller.php';
 
+confirm();
 query();
 ?>
 
@@ -48,7 +49,7 @@ query();
       </div>
       <div class="tengah">
         <table class="table-field" style="text-align: center;" border="1">
-          <form style="text-align: center;" action="konfirmasi_bayar_controller.php" method="get">
+          <form style="text-align: center;" action="konfirmasi_bayar.php" method="get">
             <input style="background-color: rgba(224, 231, 255, .2); width: 20%; padding: 5.5px 15px; font-size: 15px; border: 1px solid rgba(46, 91, 255, 0.08);border-radius: 5px; " type="text" name="username" placeholder="Cari nasabah">
 
             <input type="submit" class="submit-btn" value="Cari">
